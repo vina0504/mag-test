@@ -11,6 +11,7 @@ services:
       - phpfpm
     volumes: &appvolumes
       - appdata:/var/www/html
+#      - ./html/:/var/www/html
     ports:
       - 8000:80
     networks: &appnetworks
@@ -39,7 +40,7 @@ services:
       - db
     volumes: *appvolumes
     networks: *appnetworks
-    env_file: env/setup.env
+    env_file: env/magento.env
 
 volumes:
   dbdata:
